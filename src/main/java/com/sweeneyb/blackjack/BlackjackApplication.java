@@ -32,7 +32,7 @@ public class BlackjackApplication {
 
 	@Bean(name="players")
 	public List<Player> getPlayers() {
-		return List.of(new AutomatedPlayer(), new HitTooMuchPlayer(), new AutomatedPlayer(), new SlowPlayer());
+		return List.of(new AutomatedPlayer(), new HitTooMuchPlayer(), new AutomatedPlayer(), new SlowPlayer(), new CheatingPlayer());
 	}
 
 	@Bean
