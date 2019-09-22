@@ -1,9 +1,6 @@
 package com.sweeneyb.blackjack;
 
-import com.sweeneyb.blackjack.players.AutomatedPlayer;
-import com.sweeneyb.blackjack.players.Dealer;
-import com.sweeneyb.blackjack.players.Player;
-import com.sweeneyb.blackjack.players.SlowPlayer;
+import com.sweeneyb.blackjack.players.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,7 +32,7 @@ public class BlackjackApplication {
 
 	@Bean(name="players")
 	public List<Player> getPlayers() {
-		return List.of(new AutomatedPlayer(), new AutomatedPlayer(), new AutomatedPlayer(), new SlowPlayer());
+		return List.of(new AutomatedPlayer(), new HitTooMuchPlayer(), new AutomatedPlayer(), new SlowPlayer());
 	}
 
 	@Bean

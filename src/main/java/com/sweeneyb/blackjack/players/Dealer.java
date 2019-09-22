@@ -6,6 +6,7 @@ public class Dealer extends Player {
 
     @Override
     public void doTurn(Game game) {
-        return;
+        // dealer probably has some different logic, but that's out of scope for this conversation
+        super.doTurn(game);
     }
 }
