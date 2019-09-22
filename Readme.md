@@ -15,6 +15,9 @@ The defer model also breaks down when the player doesn't know the ruls.  Hitting
 [This player never loses](/src/main/java/com/sweeneyb/blackjack/players/CheatingPlayer.java)
 The interface here also relies on the player to report its own score.  While this could work for trusted code, untrusted code can easily take advantage of the trust to cheat.
 
+### Stealing cards after a turn
+This interface also exposes the "game" pointer.  There's nothing to stop a client from saving a copy of the game and, after turn completion, asking the game to deal a bunch of cards for no apparent reason.  That would exhaust the shoe and throw off other players.
+
 ## There's a lot there
 How the interface is constructed may change based on how the application is deployed.  If this is a desktop app where the user clicks buttons to make choices, we might be able to assume more trust in the code and make some simplifying assumptions.
 If this is deployed as a webapp where multiple untrusted clients are playing (over a network), there are a whole different set of considerations that need to be addressed. 
